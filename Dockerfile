@@ -7,6 +7,9 @@ RUN mkdir /etc/minecraft && \
     wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8/minecraft_server.1.8.jar && \
     touch eula.txt && \
     echo "eula=true" > eula.txt 
+ADD server.properties /etc/minecraft/server.properties
 WORKDIR /etc/minecraft
 EXPOSE 25565
 CMD ["java","-jar","minecraft_server.1.8.jar","nogui"]
+
+    
